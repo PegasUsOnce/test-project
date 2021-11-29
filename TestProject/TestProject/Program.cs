@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using TestProject.Generator;
 using TestProject.Printer;
 using TestProject.Sort;
 
@@ -9,13 +10,9 @@ var linqSort = new TimerSortDecorator<LinqSort>(printer);
 var bubbleSort = new TimerSortDecorator<BubbleSort>(printer);
 var awesomeBubbleSort = new TimerSortDecorator<AwesomeBubbleSort>(printer);
 
-Random randNum = new Random();
-var ints = Enumerable
-    .Repeat(0, 40)
-    .Select(i => randNum.Next(-40, 40))
-    .ToArray();
-
-var ints2 = Enumerable.Range(0, 40).Reverse().ToArray();
+var arrayGenerator = new IntArrayGenerator();
+var ints = arrayGenerator.GenerateRandom(40);
+var ints2 = arrayGenerator.GenerateReverse(40);
 
 linqSort.Execute(ints);
 bubbleSort.Execute(ints);
