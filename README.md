@@ -1,2 +1,2 @@
-# online-store
-Online store (test project)
+# test-project
+test project
