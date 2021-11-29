@@ -6,7 +6,8 @@ namespace TestProject.Sort
     /// <summary>
     /// Декоратор сортировки для измерения времени выполнения
     /// </summary>
-    public class TimerSortDecorator: ISort
+    public class TimerSortDecorator<TSort>: ISort
+        where TSort : ISort, new()
     {
         private readonly ISort _sort;
         private readonly IPrinter _printer;
@@ -15,11 +16,10 @@ namespace TestProject.Sort
         /// ctor
         /// </summary>
         public TimerSortDecorator(
-            ISort sort,
             IPrinter printer)
         {
             _printer = printer;
-            _sort = sort;
+            _sort = new TSort();
         }
 
         /// <inheritdoc />

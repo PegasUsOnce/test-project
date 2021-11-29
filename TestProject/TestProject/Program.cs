@@ -5,9 +5,9 @@ using TestProject.Sort;
 Console.WriteLine("Hello, World!");
 
 var printer = new ConsolePrinter();
-var linqSort = new TimerSortDecorator(new LinqSort(), printer);
-var bubbleSort = new TimerSortDecorator(new BubbleSort(), printer);
-var awesomeBubbleSort = new TimerSortDecorator(new AwesomeBubbleSort(), printer);
+var linqSort = new TimerSortDecorator<LinqSort>(printer);
+var bubbleSort = new TimerSortDecorator<BubbleSort>(printer);
+var awesomeBubbleSort = new TimerSortDecorator<AwesomeBubbleSort>(printer);
 
 Random randNum = new Random();
 var ints = Enumerable
