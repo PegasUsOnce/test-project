@@ -10,15 +10,15 @@ var linqSort = new TimerSortDecorator<LinqSort>(printer);
 var bubbleSort = new TimerSortDecorator<BubbleSort>(printer);
 var awesomeBubbleSort = new TimerSortDecorator<AwesomeBubbleSort>(printer);
 
-var arrayGenerator = new IntArrayGenerator();
-var ints = arrayGenerator.GenerateRandom(40);
-var ints2 = arrayGenerator.GenerateReverse(40);
+var arrayGenerator = new StringArrayGenerator();
+var arrayRandom = arrayGenerator.GenerateRandom(40);
+var arrayReverse = arrayGenerator.GenerateReverse(40);
 
-linqSort.Execute(ints);
-bubbleSort.Execute(ints);
-awesomeBubbleSort.Execute(ints);
+linqSort.Execute(arrayRandom);
+bubbleSort.Execute(arrayRandom);
+awesomeBubbleSort.Execute(arrayRandom);
 
 
-linqSort.Execute(ints2);
-bubbleSort.Execute(ints2);
-awesomeBubbleSort.Execute(ints2);
+linqSort.Execute(arrayReverse);
+bubbleSort.Execute(arrayReverse);
+awesomeBubbleSort.Execute(arrayReverse);
